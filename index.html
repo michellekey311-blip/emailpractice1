@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Writing Part 1 Practice: Travel Email</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF3F8;--card:#fff;--ink:#17252F;--mute:#5A6B78;--line:#CBD6E0;--brand:#0E5A8A;--brand-ink:#fff;--hi:#FFE9A6;--ok:#1C7C4D;--warn:#B3481A;--blank:#F7FAFD;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A22;--card:#16252F;--ink:#E7EEF3;--mute:#9DB0BE;--line:#2C4252;--brand:#5DB4EA;--brand-ink:#08202F;--hi:#4A3F14;--ok:#5AD093;--warn:#F59A6B;--blank:#112029;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1A22;--card:#16252F;--ink:#E7EEF3;--mute:#9DB0BE;--line:#2C4252;--brand:#5DB4EA;--brand-ink:#08202F;--hi:#4A3F14;--ok:#5AD093;--warn:#F59A6B;--blank:#112029;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Lexend,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+h1{font-size:1.7rem;line-height:1.25;margin:8px 0 4px}
+h2{font-size:1.2rem;margin:0 0 10px}
+.sub{color:var(--mute);margin:0 0 18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:0 0 18px}
+.scroll{overflow-x:auto}
+label{display:block;font-weight:500;margin:10px 0 4px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--blank);border:1.5px solid var(--line);border-radius:8px;padding:9px 11px}
+input:focus,textarea:focus,button:focus-visible,.tab:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+button{font:inherit;font-weight:500;cursor:pointer;border:0;border-radius:8px;padding:11px 20px;background:var(--brand);color:var(--brand-ink)}
+button.alt{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.err{color:var(--warn);min-height:1.4em;margin:8px 0 0}
+#work{display:none}
+ol.ins{padding-left:22px;margin:0}ol.ins li{margin:6px 0}
+.mail{border:1.5px solid var(--line);border-radius:10px;background:var(--blank);padding:14px 16px}
+.mail p{margin:6px 0}
+.hl{background:var(--hi);padding:0 3px;border-radius:3px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+th{background:var(--blank)}
+.bm{display:block;color:var(--mute);font-size:.88rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.tab{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.tab[aria-selected=true]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.wb td:first-child{width:28%;font-weight:500}
+.wb li{margin:0 0 6px;list-style:none}
+.wb ul{padding:0;margin:0}
+.model{margin-top:12px}
+.model[hidden]{display:none}
+.tpl{font-size:1.02rem;line-height:2.4}
+.tpl input{display:inline-block;width:auto;min-width:9ch;border:0;border-bottom:2px solid var(--brand);border-radius:0;background:var(--hi);padding:2px 6px;margin:0 2px}
+.tpl textarea{min-height:76px;line-height:1.6}
+.hdr{display:grid;grid-template-columns:70px 1fr;gap:6px 8px;align-items:center;margin-bottom:12px}
+.hdr label{margin:0}
+.count{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.count b{font-size:1.4rem}
+.bar{flex:1;min-width:140px;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--warn);transition:width .2s}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.note{background:var(--hi);border-radius:8px;padding:10px 14px;margin-top:14px}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>Writing Part 1 Practice: Travel Email</h1>
+<p class="sub">Bahasa Inggeris 1119/4 · Write an email to your friend Jessie</p>
+
+<!-- STEP 1: student details -->
+<section id="info">
+  <h2>Step 1: Your details</h2>
+  <label for="sname">Full name</label>
+  <input type="text" id="sname" autocomplete="name">
+  <label for="sclass">Class</label>
+  <input type="text" id="sclass" placeholder="Example: 4 SPINEL">
+  <p class="err" id="err1" role="alert"></p>
+  <button id="start">Start worksheet</button>
+</section>
+
+<div id="work">
+<!-- STEP 2: prompt -->
+<section>
+  <h2>Step 2: Prompt and sentence starters</h2>
+  <div class="mail">
+    <p><b>You received an email from your friend, Jessie.</b></p>
+    <p>Hi,</p>
+    <p>The school holidays are coming soon! My family and I are planning to go on a holiday.</p>
+    <p><span class="hl">Should we go to the beach or the mountains?</span> <span class="hl">Why would you recommend that place?</span> <span class="hl">What activities can we do there?</span> <span class="hl">What should we bring for the trip?</span></p>
+    <p>I look forward to your reply.</p>
+    <p>Jessie</p>
+  </div>
+  <p><b>Write an email to Jessie in about 80 words. Answer all the questions in her email.</b></p>
+  <div class="scroll"><table>
+    <tr><th>Sub-question with translations</th><th>Suggested sentence starter</th></tr>
+    <tr><td>1. Should we go to the beach <b>or</b> the mountains?<span class="bm">Patutkah kami pergi ke pantai atau ke kawasan pergunungan?</span><span class="bm">我们应该去海边还是山区？</span></td><td>Firstly, you should go to ________.</td></tr>
+    <tr><td>2. Why would you recommend that place?<span class="bm">Mengapakah kamu mencadangkan tempat itu?</span><span class="bm">你为什么推荐那个地方？</span></td><td>Next, I recommend this place because ________.</td></tr>
+    <tr><td>3. What activities can we do there?<span class="bm">Apakah aktiviti yang boleh kami lakukan di sana?</span><span class="bm">我们可以在那里进行什么活动？</span></td><td>Then, you can ________ and ________ there.</td></tr>
+    <tr><td>4. What should we bring for the trip?<span class="bm">Apakah yang patut kami bawa untuk percutian itu?</span><span class="bm">我们应该带什么东西去度假？</span></td><td>Lastly, you should bring ________ because ________.</td></tr>
+  </table></div>
+</section>
+
+<!-- STEP 3: suggested answers -->
+<section>
+  <h2>Step 3: Suggested answers</h2>
+  <p class="sub">Pick a place to see ideas you can use in your email.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="scroll"><table class="wb"><tbody id="wb"></tbody></table></div>
+  <div class="actions" style="margin-top:12px"><button class="alt" id="mbtn" aria-expanded="false">Show a model email</button></div>
+  <div class="mail model" id="model" hidden></div>
+</section>
+
+<!-- STEP 4: write -->
+<section>
+  <h2>Step 4: Write your email</h2>
+  <p class="sub">Type in the yellow spaces. Use ideas from Step 3 or your own.</p>
+  <div class="hdr">
+    <label for="to">To:</label><input type="text" id="to" placeholder="Example: jessie123@gmail.com">
+    <label for="from">From:</label><input type="text" id="from" placeholder="Example: yourname123@gmail.com">
+    <label for="subj">Subject:</label><input type="text" id="subj" placeholder="Example: My advice">
+  </div>
+  <div class="tpl">
+    <div>Dear <input type="text" id="dear" size="14" value="Jessie">,</div>
+    <label for="intro" style="font-size:.9rem;color:var(--mute)">Opening: say thank you or say something friendly (pendahuluan 开头)</label>
+    <textarea id="intro" placeholder="Example: How are you? I hope you are fine. I am writing this to give you some advice."></textarea>
+    <div>Firstly, you should go to <input type="text" id="a" size="18" aria-label="place">.</div>
+    <div>Next, I recommend this place because <input type="text" id="b" size="30" aria-label="reason">.</div>
+    <div>Then, you can <input type="text" id="c" size="20" aria-label="activity one"> and <input type="text" id="d" size="20" aria-label="activity two"> there.</div>
+    <div>Lastly, you should bring <input type="text" id="e" size="16" aria-label="item"> because <input type="text" id="f" size="28" aria-label="reason for item">.</div>
+    <label for="outro" style="font-size:.9rem;color:var(--mute)">Closing: end your email politely (penutup 结尾)</label>
+    <textarea id="outro" placeholder="Example: I hope my advice can help you. Have a great time. Bye!"></textarea>
+    <div style="margin-top:8px">Best wishes,<br><span id="sig"></span></div>
+  </div>
+  <div class="count"><span><b id="wc">0</b> words</span><div class="bar"><i id="bar"></i></div><span id="wmsg" style="color:var(--mute)">Aim for about 80 words</span></div>
+</section>
+
+<!-- STEP 5: submit -->
+<section>
+  <h2>Step 5: Submit to your teacher</h2>
+  <p class="sub">Your name, class and answers will be filled into a Google Form. When the form opens, check them and press <b>Submit</b> there.</p>
+  <div class="actions">
+    <button id="send">Submit to teacher</button>
+  </div>
+  <p class="err" id="err2" role="alert"></p>
+  <div class="note" id="done" hidden>The Google Form is open in a new tab. Remember to press <b>Submit</b> in the form so your teacher receives your work.</div>
+</section>
+</div>
+</main>
+
+<script>
+/* ===== TEACHER SETUP (one time) =====
+ 1. In your Google Form add 4 questions: Name (short answer), Class (short answer),
+    Email text (paragraph), Word count (short answer).
+ 2. Form menu (three dots) > Get pre-filled link. Type exactly: NAME, CLASS, EMAILTEXT, WORDS
+    into the four boxes, click Get link, then paste the link below between the quotes.
+ The page swaps those four words for each student's answers. */
+const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdgBJa_9WppexUpyru8_vWUHs1I9wh7cqVKhajVZaslwOht2w/viewform?usp=pp_url&entry.1531883522=NAME&entry.1796003507=CLASS&entry.508689513=EMAILTEXT&entry.2135768433=WORDS";
+
+const $ = id => document.getElementById(id);
+const OPTS = {
+ beach:{label:"The beach",
+  why:[["beautiful","cantik","美丽的"],["relax","berehat","放松"],["spend time with family","meluangkan masa bersama keluarga","与家人共度时光"]],
+  act:[["build sandcastles","membina istana pasir","堆沙堡"],["take photos","mengambil gambar","拍照"],["have a picnic","berkelah","野餐"]],
+  bring:[["a hat","topi","帽子"],["some water","air minuman","饮用水"],["some food","makanan","食物"]],
+  place:["the beach","pantai","海边"],
+  model:"Dear Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, you should go to the beach. Next, I recommend this place because it is beautiful and you can relax there. Then, you can build sandcastles and take photos there. Lastly, you should bring a hat because the sun is very hot.\nI hope my advice can help you. Have a great time. Bye!"},
+ lego:{label:"LEGOLAND",
+  why:[["fun","menyeronokkan","好玩的"],["exciting","mengujakan","令人兴奋的"],["enjoy time with family","menikmati masa bersama keluarga","与家人共度欢乐时光"]],
+  act:[["go on rides","menaiki permainan","玩游乐设施"],["take photos","mengambil gambar","拍照"],["look at LEGO models","melihat model LEGO","观赏乐高模型"]],
+  bring:[["a hat","topi","帽子"],["some money","wang","钱"],["a phone","telefon","手机"]],
+  place:["LEGOLAND","LEGOLAND","乐高乐园"],
+  model:"Dear Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, you should go to LEGOLAND. Next, I recommend this place because it is fun and you can enjoy time with your family. Then, you can go on rides and look at LEGO models there. Lastly, you should bring some money because you may want to buy snacks.\nI hope my advice can help you. Have a great time. Bye!"},
+ museum:{label:"A museum",
+  why:[["interesting","menarik","有趣的"],["learn new things","mempelajari perkara baharu","学习新知识"],["learn about history","belajar tentang sejarah","了解历史"]],
+  act:[["look at old objects","melihat objek lama","观看古老物品"],["read information","membaca maklumat","阅读资料"],["learn about the past","belajar tentang masa lalu","了解过去"]],
+  bring:[["a notebook","buku nota","笔记本"],["a pen","pen","笔"],["some money","wang","钱"]],
+  place:["a museum","muzium","博物馆"],
+  model:"Dear Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, you should go to a museum. Next, I recommend this place because it is interesting and you can learn about history. Then, you can look at old objects and read information there. Lastly, you should bring a notebook because you can write down new facts.\nI hope my advice can help you. Have a great time. Bye!"}
+};
+const li = a => `<li>${a[0]}<span class="bm">${a[1]} · ${a[2]}</span></li>`;
+const list = arr => `<ul>${arr.map(li).join("")}</ul>`;
+let cur = "beach";
+function drawOpt(){
+  const o = OPTS[cur];
+  $("wb").innerHTML =
+   `<tr><td>1. Where should we go?</td><td>${list([o.place])}</td></tr>`+
+   `<tr><td>2. Why would you recommend that place?</td><td>${list(o.why)}</td></tr>`+
+   `<tr><td>3. What activities can we do there?</td><td>${list(o.act)}</td></tr>`+
+   `<tr><td>4. What should we bring for the trip?</td><td>${list(o.bring)}</td></tr>`;
+  $("model").textContent = o.model;
+  $("model").style.whiteSpace = "pre-line";
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.k === cur));
+}
+Object.keys(OPTS).forEach(k=>{
+  const b = document.createElement("button");
+  b.className="tab"; b.type="button"; b.dataset.k=k; b.setAttribute("role","tab");
+  b.textContent = OPTS[k].label;
+  b.onclick = ()=>{cur=k;drawOpt();};
+  $("tabs").appendChild(b);
+});
+drawOpt();
+$("mbtn").onclick = ()=>{
+  const m=$("model"); m.hidden=!m.hidden;
+  $("mbtn").textContent = m.hidden ? "Show a model email" : "Hide the model email";
+  $("mbtn").setAttribute("aria-expanded", String(!m.hidden));
+};
+
+$("start").onclick = ()=>{
+  const n=$("sname").value.trim(), c=$("sclass").value.trim();
+  if(!n||!c){$("err1").textContent="Please type your name and class to start.";return;}
+  $("err1").textContent="";
+  $("sig").textContent=n;
+  $("work").style.display="block";
+  $("info").querySelectorAll("input,button").forEach(x=>x.disabled=true);
+  $("work").scrollIntoView({behavior:"smooth"});
+};
+
+const v = id => $(id).value.trim();
+function body(){
+  const p=[];
+  p.push("Dear "+v("dear")+",");
+  if(v("intro")) p.push(v("intro"));
+  const s=[];
+  if(v("a")) s.push("Firstly, you should go to "+v("a")+".");
+  if(v("b")) s.push("Next, I recommend this place because "+v("b")+".");
+  if(v("c")||v("d")) s.push("Then, you can "+[v("c"),v("d")].filter(Boolean).join(" and ")+" there.");
+  if(v("e")||v("f")) s.push("Lastly, you should bring "+v("e")+(v("f")?" because "+v("f"):"")+".");
+  if(s.length) p.push(s.join(" "));
+  if(v("outro")) p.push(v("outro"));
+  return p.join("\n");
+}
+function words(t){return (t.match(/[A-Za-z0-9'’-]+/g)||[]).length;}
+function update(){
+  const w = words(body());
+  $("wc").textContent=w;
+  $("bar").style.width=Math.min(100,w/100*100)+"%";
+  const ok = w>=70 && w<=100;
+  $("bar").style.background = ok ? "var(--ok)" : "var(--warn)";
+  $("wmsg").textContent = w<70 ? "Write a little more (about 80 words)" : w>100 ? "A bit long. Try to keep near 80 words" : "Good length";
+}
+document.querySelectorAll(".tpl input,.tpl textarea").forEach(e=>e.addEventListener("input",update));
+update();
+
+function full(){
+  return "To: "+v("to")+"\nFrom: "+v("from")+"\nSubject: "+v("subj")+"\n\n"+body()+"\n\nBest wishes,\n"+v("sname");
+}
+$("send").onclick = ()=>{
+  $("err2").style.color="var(--warn)";
+  if(words(body())<20){$("err2").textContent="Please write your email in Step 4 before you submit.";return;}
+  if(FORM_LINK.indexOf("PASTE_")===0){$("err2").textContent="Teacher setup needed: the Google Form link has not been added yet.";return;}
+  const rep={NAME:v("sname"),CLASS:v("sclass"),EMAILTEXT:full(),WORDS:String(words(body()))};
+  let url=FORM_LINK;
+  for(const k in rep){url=url.split("="+k).join("="+encodeURIComponent(rep[k]));}
+  $("err2").textContent="";
+  $("done").hidden=false;
+  window.open(url,"_blank","noopener");
+};
+</script>
+</body>
+</html>
